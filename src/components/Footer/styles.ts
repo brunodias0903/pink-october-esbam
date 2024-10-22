@@ -7,8 +7,15 @@ export const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 
-  padding: 12px 24px;
+  background-color: #008634;
+`;
 
-  background-color: green;
+export const FooterText = styled.p`
+  display: flex;
+  flex-direction: row;
+
+  font-size: 2.5vh;
+  color: #ffffff;
 `;

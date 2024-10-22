@@ -8,7 +8,17 @@ export const HeaderContainer = styled.div`
   flex-direction: row;
   align-items: center;
 
-  padding: 12px 24px;
+  padding: 1vh 3.5vh;
 
-  background-color: green;
+  background-color: #008634;
+`;
+
+export const HeaderLogo = styled.img`
+  height: 100%;
+`;
+
+export const HeaderTitle = styled.h1`
+  font-size: 5vh;
+  margin-left: 2vh;
+  color: #ffffff;
 `;
