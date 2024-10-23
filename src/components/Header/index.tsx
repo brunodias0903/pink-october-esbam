@@ -12,6 +12,7 @@ const Header = () => {
       >
         <HeaderLogo src={Logo} alt="esbam-logo" />
       </a>
+      <nav>{/* <StyledLink to="/">INICIO</StyledLink> */}</nav>
     </HeaderContainer>
   );
 };

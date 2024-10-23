@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 15vh;
+
+  @media (max-width: 768px) {
+    height: 10vh;
+  }
 
   display: flex;
   flex-direction: row;
@@ -17,8 +22,12 @@ export const HeaderLogo = styled.img`
   height: 100%;
 `;
 
-export const HeaderTitle = styled.h1`
-  font-size: 5vh;
-  margin-left: 2vh;
+export const StyledLink = styled(Link)`
   color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+
+  &:hover {
+    color: #e1e1e1;
+  }
 `;

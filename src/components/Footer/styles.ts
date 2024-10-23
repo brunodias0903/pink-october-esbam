@@ -16,6 +16,10 @@ export const FooterText = styled.p`
   display: flex;
   flex-direction: row;
 
-  font-size: 2.5vh;
+  font-size: 1rem;
   color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
