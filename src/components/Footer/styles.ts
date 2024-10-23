@@ -20,6 +20,6 @@ export const FooterText = styled.p`
   color: #ffffff;
 
   @media (max-width: 768px) {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 `;

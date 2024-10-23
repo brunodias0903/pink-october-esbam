@@ -9,3 +9,13 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const LayoutMainContent = styled.main`
+  width: 100%;
+
+  display: flex;
+  flex-grow: 1;
+  overflow-y: auto;
+
+  padding: 2vh;
+`;
