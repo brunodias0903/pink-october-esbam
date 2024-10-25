@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
 
   @media (max-width: 768px) {
     height: 10vh;
+    justify-content: space-between;
   }
 
   display: flex;
@@ -15,6 +16,8 @@ export const HeaderContainer = styled.div`
 
   padding: 1vh 3.5vh;
 
+  gap: 2vh;
+
   background-color: #008634;
 `;
 
@@ -22,10 +25,18 @@ export const HeaderLogo = styled.img`
   height: 100%;
 `;
 
-export const StyledLink = styled(Link)`
+export const HeaderNav = styled.nav`
+  display: flex;
+
+  gap: 2vh;
+`;
+
+export const HeaderLink = styled(Link)`
   color: #ffffff;
   text-decoration: none;
+
   font-size: 1.2rem;
+  font-weight: 600;
 
   &:hover {
     color: #e1e1e1;

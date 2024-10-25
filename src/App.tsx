@@ -1,12 +1,23 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
+import About from "./pages/About";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./styles/global";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 
@@ -14,9 +25,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <RouterProvider router={router} />
     </div>
   );
 }
