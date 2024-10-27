@@ -1,22 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 import { GlobalStyle } from "./styles/global";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <RouterProvider router={router} />
     </div>
   );
 }

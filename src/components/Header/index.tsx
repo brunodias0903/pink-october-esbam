@@ -1,18 +1,22 @@
 import Logo from "../../assets/esbam-logo.png";
-import { HeaderContainer, HeaderLogo } from "./styles";
+import { HeaderContainer, HeaderLink, HeaderLogo, HeaderNav } from "./styles";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <a
-        href="https://esbam.edu.br/"
+        href="/"
         style={{
           height: "100%",
         }}
       >
         <HeaderLogo src={Logo} alt="esbam-logo" />
       </a>
-      <nav>{/* <StyledLink to="/">INICIO</StyledLink> */}</nav>
+      <HeaderNav>
+        <HeaderLink to="/">INICIO</HeaderLink>
+        <HeaderLink to="/about">SOBRE</HeaderLink>
+        <HeaderLink to="/how-to-prevent">COMO PREVINIR</HeaderLink>
+      </HeaderNav>
     </HeaderContainer>
   );
 };
