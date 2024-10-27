@@ -1,7 +1,54 @@
+import { useEffect, useRef, useState } from "react";
+import { FaBars } from "react-icons/fa";
 import Logo from "../../assets/esbam-logo.png";
-import { HeaderContainer, HeaderLink, HeaderLogo, HeaderNav } from "./styles";
+import {
+  DropdownMenu,
+  HeaderContainer,
+  HeaderLink,
+  HeaderLogo,
+  HeaderNav,
+} from "./styles";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleTouchOutside = (event: TouchEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    if (isMobile && isDropdownOpen) {
+      document.addEventListener("touchstart", handleTouchOutside);
+    }
+
+    return () => {
+      document.removeEventListener("touchstart", handleTouchOutside);
+    };
+  }, [isDropdownOpen, isMobile]);
+
   return (
     <HeaderContainer>
       <a
@@ -12,11 +59,35 @@ const Header = () => {
       >
         <HeaderLogo src={Logo} alt="esbam-logo" />
       </a>
-      <HeaderNav>
-        <HeaderLink to="/">INICIO</HeaderLink>
-        <HeaderLink to="/about">SOBRE</HeaderLink>
-        <HeaderLink to="/how-to-prevent">COMO PREVINIR</HeaderLink>
-      </HeaderNav>
+      {!isMobile ? (
+        <HeaderNav>
+          <HeaderLink to="/">INICIO</HeaderLink>
+          <HeaderLink to="/about">SOBRE</HeaderLink>
+          <HeaderLink to="/how-to-prevent">COMO PREVINIR</HeaderLink>
+        </HeaderNav>
+      ) : (
+        <div onClick={toggleDropdown}>
+          <FaBars size={24} color="#ffffff" />
+        </div>
+      )}
+
+      {isMobile && isDropdownOpen && (
+        <DropdownMenu ref={dropdownRef}>
+          <HeaderLink to="/" color="#000000" fontWeight={"regular"}>
+            Início
+          </HeaderLink>
+          <HeaderLink to="/about" color="#000000" fontWeight={"regular"}>
+            Sobre
+          </HeaderLink>
+          <HeaderLink
+            to="/how-to-prevent"
+            color="#000000"
+            fontWeight={"regular"}
+          >
+            Como previnir
+          </HeaderLink>
+        </DropdownMenu>
+      )}
     </HeaderContainer>
   );
 };
