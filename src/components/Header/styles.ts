@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
 
   padding: 1vh 3.5vh;
 
-  gap: 2vh;
+  gap: 5vh;
 
   background-color: #008634;
 `;
@@ -28,7 +28,7 @@ export const HeaderLogo = styled.img`
 export const HeaderNav = styled.nav`
   display: flex;
 
-  gap: 2vh;
+  gap: 3vh;
 `;
 
 export const HeaderLink = styled(Link)`

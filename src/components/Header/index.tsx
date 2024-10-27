@@ -15,6 +15,7 @@ const Header = () => {
       <HeaderNav>
         <HeaderLink to="/">INICIO</HeaderLink>
         <HeaderLink to="/about">SOBRE</HeaderLink>
+        <HeaderLink to="/how-to-prevent">COMO PREVINIR</HeaderLink>
       </HeaderNav>
     </HeaderContainer>
   );
