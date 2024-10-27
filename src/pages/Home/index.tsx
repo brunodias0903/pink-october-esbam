@@ -7,6 +7,10 @@ import {
   HomeSubtitle,
   HomeTitle,
   HomeTitleContainer,
+  CardContainer,
+  Card,
+  CardTitle,
+  CardContent,
 } from "./styles";
 
 const Home = () => {
@@ -35,6 +39,33 @@ const Home = () => {
           </strong>
         </HomeContentText>
       </HomeContentContainer>
+      {/* Cards */}
+      <CardContainer>
+        <Card style={{ backgroundColor: "#f06292" }}>
+          <CardTitle className="card-title">Nossa luta</CardTitle>
+          <CardContent className="card-content">
+            <p>
+            O Outubro Rosa é uma campanha de conscientização realizada anualmente, com o objetivo de alertar sobre a importância da prevenção e do diagnóstico precoce do câncer de mama. Esse movimento teve início nos Estados Unidos na década de 1990 e, desde então, expandiu-se mundialmente.
+            </p>
+          </CardContent>
+        </Card>
+        <Card style={{ backgroundColor: "#ad1457" }}>
+          <CardTitle className="card-title">Seus direitos</CardTitle>
+          <CardContent className="card-content">
+            <p>
+            Pacientes com câncer possuem diversos direitos garantidos por lei – tanto de acesso à saúde quantos sociais – que às vezes desconhece. Uma vez desrespeitados, o paciente pode tomar as providências cabíveis e exigir o seu cumprimento.
+            </p>
+          </CardContent>
+        </Card>
+        <Card style={{ backgroundColor: "#733849" }}>
+          <CardTitle className="card-title">Convivendo com câncer</CardTitle>
+          <CardContent className="card-content">
+            <p>
+            Durante a descoberta do câncer de mama, é normal que não só a vida da paciente como também da família e dos amigos sejam afetadas. Se você é membro da família, amigo ou cuidador de alguém com câncer de mama é importante que você saiba lidar com os desafios da doença juntamente com seu ente querido.
+            </p>
+          </CardContent>
+        </Card>
+      </CardContainer>
     </HomeContainer>
   );
 };
