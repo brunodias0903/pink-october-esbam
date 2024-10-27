@@ -64,11 +64,3 @@ export const HomeContentText = styled.p`
     font-size: 1rem;
   }
 `;
-
-export const CardContainer = styled.section`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-  padding: 20px;
-`;

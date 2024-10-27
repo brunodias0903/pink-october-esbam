@@ -5,9 +5,8 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   color: #fff;
-  width: 400px;
-  height: 300px;
-  margin: 8px;
+  width: 50vh;
+  height: 35vh;
   border-radius: 10px;
   position: relative;
   text-align: center;
@@ -30,17 +29,7 @@ export const Card = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-  }
-
-  @media (max-width: 480px) {
-    h3 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 0.9rem;
-    }
+    width: 40vh;
   }
 `;
 
@@ -50,7 +39,7 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardContent = styled.div`
-  font-size: 16px;
+  font-size: 1.3rem;
   font-weight: 600;
   padding: 25px;
   opacity: 0;

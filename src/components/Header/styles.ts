@@ -63,6 +63,7 @@ export const DropdownMenu = styled.div`
   padding: 1vh 0;
   overflow: hidden;
   animation: slideDown 0.3s ease;
+  z-index: 1000;
 
   ${HeaderLink} {
     padding: 8px 16px;
