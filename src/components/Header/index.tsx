@@ -18,6 +18,31 @@ const Header = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
+  const showMobileHeaderOptions = () => {
+    if (isMobile && isDropdownOpen) {
+      return (
+        <DropdownMenu ref={dropdownRef}>
+          <HeaderLink to="/" color="#000000" fontWeight={"regular"}>
+            Início
+          </HeaderLink>
+          <HeaderLink to="/about" color="#000000" fontWeight={"regular"}>
+            Sobre
+          </HeaderLink>
+          <HeaderLink
+            to="/how-to-prevent"
+            color="#000000"
+            fontWeight={"regular"}
+          >
+            Como previnir
+          </HeaderLink>
+          <HeaderLink to="/find-help" color="#000000" fontWeight={"regular"}>
+            Busque ajuda
+          </HeaderLink>
+        </DropdownMenu>
+      );
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -64,6 +89,7 @@ const Header = () => {
           <HeaderLink to="/">INICIO</HeaderLink>
           <HeaderLink to="/about">SOBRE</HeaderLink>
           <HeaderLink to="/how-to-prevent">COMO PREVINIR</HeaderLink>
+          <HeaderLink to="/find-help">BUSQUE AJUDE</HeaderLink>
         </HeaderNav>
       ) : (
         <div onClick={toggleDropdown}>
@@ -71,23 +97,7 @@ const Header = () => {
         </div>
       )}
 
-      {isMobile && isDropdownOpen && (
-        <DropdownMenu ref={dropdownRef}>
-          <HeaderLink to="/" color="#000000" fontWeight={"regular"}>
-            Início
-          </HeaderLink>
-          <HeaderLink to="/about" color="#000000" fontWeight={"regular"}>
-            Sobre
-          </HeaderLink>
-          <HeaderLink
-            to="/how-to-prevent"
-            color="#000000"
-            fontWeight={"regular"}
-          >
-            Como previnir
-          </HeaderLink>
-        </DropdownMenu>
-      )}
+      {showMobileHeaderOptions()}
     </HeaderContainer>
   );
 };
